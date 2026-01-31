@@ -3,10 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VelocityVault - Customizable SE Bikes | Premium Urban Bicycles</title>
+    <title>VelocityVault - Premium SE Bikes | Find Your Perfect Ride</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: #00d4ff;
+            font-weight: 300;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+            color: white;
+        }
+        .category-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .category-header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .category-header h3 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        .feature-box {
+            padding: 30px;
+            border-left: 5px solid #ff6b35;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+        }
+        .feature-box h4 {
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .stats-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        .stat-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+        }
+        .stat-label {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+        .meetup-badge {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -24,7 +153,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Products</a>
+                        <a class="nav-link" href="products.html">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -42,90 +171,102 @@
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="bg-primary text-white py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold">VelocityVault - Ride Your Way</h1>
-                    <p class="lead">Customizable, High-Performance SE Bikes with Exclusive Models & Premium Upgrades</p>
-                    <a href="products.html" class="btn btn-light btn-lg">Shop Now</a>
+    <!-- Hero Section - SE Bike Meetup -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-7">
+                    <div class="meetup-badge">
+                        <i class="fas fa-users"></i> JOIN THE COMMUNITY
+                    </div>
+                    <h1 class="hero-title">
+                        The SE Bikes Community
+                    </h1>
+                    <p class="hero-subtitle">
+                        Where street culture meets premium engineering. Find your perfect ride and join riders worldwide who trust SE Bikes.
+                    </p>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6;">
+                        From legendary Big Rippers to pro-grade freestyle machines, VelocityVault brings you the complete SE Bikes lineup. Whether you're into wheelies, tricks, or cruising the streets, we've got the bike that matches your style.
+                    </p>
+                    <a href="products.html" class="btn cta-button text-white">
+                        <i class="fas fa-bicycle"></i> Explore 31+ Bikes
+                    </a>
+                    <a href="about.html" class="btn btn-outline-light btn-lg ms-3">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </a>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="https://www.sebikes.com/cdn/shop/files/2024_SE_BIG_RIPPER_29_BLUE_FRONT_1d3de051-79c8-4a55-8570-090edbf3b488.png" class="img-fluid" alt="SE Big Ripper" style="max-width: 100%; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));">
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- Featured Products -->
-    <section class="py-5">
+    <!-- Bike Categories -->
+    <section class="py-5" style="background: #f5f5f5;">
         <div class="container">
-            <h2 class="text-center mb-5">Featured Bikes</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://www.sebikes.com/cdn/shop/products/2021_SE_WILDMAN_BLUE_FRONT_c044995e-5e71-4870-a3ca-a9ca13ec9138.png" class="card-img-top" alt="SE Wildman" style="object-fit: contain; padding: 20px;">
-                        <div class="card-body">
-                            <h5 class="card-title">SE Wildman</h5>
-                            <p class="card-text">Freestyle BMX bike with classic SE style. Perfect for street riding and tricks. Available in 20" frame.</p>
-                            <p class="fw-bold">$399.99</p>
-                            <button class="btn btn-primary add-to-cart" data-id="1" data-name="SE Wildman" data-price="399.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://www.sebikes.com/cdn/shop/files/2021_SE_EVERYDAY_BLACK_FRONT_f1a2a181-016c-45f4-a045-00e2c38aca83.png" class="card-img-top" alt="SE Everyday" style="object-fit: contain; padding: 20px;">
-                        <div class="card-body">
-                            <h5 class="card-title">SE Everyday</h5>
-                            <p class="card-text">Versatile freestyle bike built for daily riding. Durable construction for street and park sessions.</p>
-                            <p class="fw-bold">$429.99</p>
-                            <button class="btn btn-primary add-to-cart" data-id="2" data-name="SE Everyday" data-price="429.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://www.sebikes.com/cdn/shop/files/2024_SE_BIG_RIPPER_29_BLUE_FRONT_1d3de051-79c8-4a55-8570-090edbf3b488.png" class="card-img-top" alt="SE Big Ripper 29" style="object-fit: contain; padding: 20px;">
-                        <div class="card-body">
-                            <h5 class="card-title">SE Big Ripper 29"</h5>
-                            <p class="card-text">Iconic retro BMX cruiser with 29" wheels. The ultimate street cruiser with classic SE styling.</p>
-                            <p class="fw-bold">$899.99</p>
-                            <button class="btn btn-primary add-to-cart" data-id="3" data-name="SE Big Ripper 29" data-price="899.99">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mb-5">
+                <h2 class="section-title">Find Your Perfect SE Bike</h2>
+                <p class="section-subtitle">Choose the style that matches your riding</p>
             </div>
 
-            <div class="row mt-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://www.sebikes.com/cdn/shop/products/2022_SE_GAUDIUM_FRONT.png" class="card-img-top" alt="SE Gaudium" style="object-fit: contain; padding: 20px;">
+            <div class="row g-4">
+                <!-- Kids & Entry Level -->
+                <div class="col-lg-4">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-child"></i></div>
+                            <h3>Kids & Beginners</h3>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">SE Gaudium</h5>
-                            <p class="card-text">Premium freestyle BMX with upgraded components. Built for serious riders who demand performance.</p>
-                            <p class="fw-bold">$659.99</p>
-                            <button class="btn btn-primary add-to-cart" data-id="4" data-name="SE Gaudium" data-price="659.99">Add to Cart</button>
+                            <p>Perfect first bikes for young riders learning the basics. Durable, safe, and fun.</p>
+                            <ul style="font-size: 0.95rem; color: #666;">
+                                <li>16" - 18" wheel sizes</li>
+                                <li>Lightweight frames</li>
+                                <li>Training wheels available</li>
+                                <li>Ages 3-10</li>
+                            </ul>
+                            <a href="products.html" class="btn btn-sm btn-outline-primary mt-3">View Bikes</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://www.sebikes.com/cdn/shop/files/2024_SE_MONSTER_RIPPER_SILVER_FRONT.png" class="card-img-top" alt="SE Monster Ripper 29+" style="object-fit: contain; padding: 20px;">
+
+                <!-- Freestyle & Street -->
+                <div class="col-lg-4">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-person-biking"></i></div>
+                            <h3>Freestyle & Street</h3>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">SE Monster Ripper 29"+</h5>
-                            <p class="card-text">Big wheel cruiser with plus-size tires for maximum comfort and style on any terrain.</p>
-                            <p class="fw-bold">$999.99</p>
-                            <button class="btn btn-primary add-to-cart" data-id="5" data-name="SE Monster Ripper 29+" data-price="999.99">Add to Cart</button>
+                            <p>Built for tricks, stunts, and street riding. The most popular category for serious riders.</p>
+                            <ul style="font-size: 0.95rem; color: #666;">
+                                <li>20" wheels (pro standard)</li>
+                                <li>360° rotors & pegs</li>
+                                <li>Chromoly frames</li>
+                                <li>Beginner to pro level</li>
+                            </ul>
+                            <a href="products.html" class="btn btn-sm btn-outline-primary mt-3">View Bikes</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://www.sebikes.com/cdn/shop/files/MY25_SE_BIG_RIPPER_29_HOT_PINK_FRONT.png" class="card-img-top" alt="SE Big Ripper 29 Hot Pink" style="object-fit: contain; padding: 20px;">
+
+                <!-- Big Wheel Cruisers -->
+                <div class="col-lg-4">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fas fa-crown"></i></div>
+                            <h3>Big Wheel Cruisers</h3>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">SE Big Ripper 29" - Hot Pink</h5>
-                            <p class="card-text">2025 Big Ripper in eye-catching Hot Pink. Classic BMX cruiser with modern upgrades and style.</p>
-                            <p class="fw-bold">$999.99</p>
-                            <button class="btn btn-primary add-to-cart" data-id="6" data-name="SE Big Ripper 29 Hot Pink" data-price="999.99">Add to Cart</button>
+                            <p>Iconic SE Bikes legacy. Perfect for wheelies, style, and serious cruising.</p>
+                            <ul style="font-size: 0.95rem; color: #666;">
+                                <li>24" - 29" wheels</li>
+                                <li>Classic SE styling</li>
+                                <li>Disc brakes & gearing</li>
+                                <li>Best for wheelies & tricks</li>
+                            </ul>
+                            <a href="products.html" class="btn btn-sm btn-outline-primary mt-3">View Bikes</a>
                         </div>
                     </div>
                 </div>
@@ -133,53 +274,90 @@
         </div>
     </section>
 
-    <!-- About SE Bikes -->
-    <section class="py-5 bg-light">
+    <!-- Why SE Bikes -->
+    <section class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2>About VelocityVault</h2>
-                    <p>VelocityVault is an online SE Bikes retailer specializing in customizable, high-performance urban bicycles. We offer exclusive SE models, custom color options, premium parts, and upgrades—all built to match your style.</p>
-                    <p>Shop online and personalize your ride with our curated selection of BMX, cruisers, and street bikes. Each bike is hand-picked for quality, performance, and style to help you own the streets.</p>
-                    <a href="about.html" class="btn btn-primary">Learn More</a>
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Choose SE Bikes?</h2>
+                <p class="section-subtitle">40+ years of BMX heritage and innovation</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="feature-box">
+                        <h4><i class="fas fa-star"></i> Legendary Brand Heritage</h4>
+                        <p>SE Bikes has been the pioneer of BMX culture since 1977. From invention to innovation, SE defines urban cycling.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4><i class="fas fa-tools"></i> Premium Engineering</h4>
+                        <p>Chromoly frames, precision components, and tested durability. Built to last through tricks, stunts, and street abuse.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4><i class="fas fa-shield-alt"></i> Quality Assurance</h4>
+                        <p>Every bike is inspected and tested before shipping. We guarantee your SE Bike arrives ready to ride.</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="https://www.sebikes.com/cdn/shop/files/2023_SE_BIG_RIPPER_CHECKERBOARD_FRONT.png" class="img-fluid rounded" alt="SE Bikes History" style="object-fit: contain; padding: 20px;">
+
+                <div class="col-lg-6">
+                    <div class="feature-box">
+                        <h4><i class="fas fa-palette"></i> Iconic Designs</h4>
+                        <p>From the legendary Big Ripper to pro-grade freestyle machines. SE Bikes combines function with legendary style.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4><i class="fas fa-award"></i> Pro Rider Tested</h4>
+                        <p>Trusted by pro riders worldwide. SE Bikes are used in competitions, contests, and street sessions globally.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4><i class="fas fa-truck"></i> Fast Shipping</h4>
+                        <p>All bikes ship from Amazon with Prime eligibility. Get your SE Bike delivered to your door quickly.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-5">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
-            <h2 class="text-center mb-5">What Our Customers Say</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">"The SE Bikes Cruiser is the perfect bike for my daily commute. Smooth ride and great build quality!"</p>
-                            <p class="fw-bold">- Alex Johnson</p>
-                        </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">31+</div>
+                        <div class="stat-label">SE Bikes in Stock</div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">"I've been riding my SE BMX for two years now and it's held up perfectly through all the abuse. Highly recommend!"</p>
-                            <p class="fw-bold">- Taylor Smith</p>
-                        </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">Years of Heritage</div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text">"The SE Mountain bike handles trails like a dream. Great suspension and responsive handling."</p>
-                            <p class="fw-bold">- Jordan Williams</p>
-                        </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">3-29"</div>
+                        <div class="stat-label">All Wheel Sizes</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Riding Possibilities</div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white;">
+        <div class="container text-center">
+            <h2 class="mb-3" style="font-size: 2.5rem; font-weight: bold;">Ready to Find Your Ride?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #ccc;">
+                Browse 31+ premium SE Bikes curated for every style and skill level.
+            </p>
+            <a href="products.html" class="btn cta-button text-white btn-lg">
+                <i class="fas fa-shopping-bag"></i> Shop Now
+            </a>
         </div>
     </section>
 
@@ -188,22 +366,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
-                    <h5>Velocity Vault</h5>
-                    <p>Premium SE Bikes for the streets. Urban culture meets high-performance cycling.</p>
+                    <h5>VelocityVault</h5>
+                    <p>Your trusted source for premium SE Bikes. Join the community. Find your style. Own the streets.</p>
                 </div>
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-white">Home</a></li>
-                        <li><a href="products.html" class="text-white">Products</a></li>
-                        <li><a href="about.html" class="text-white">About Us</a></li>
-                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="products.html" class="text-white text-decoration-none">Shop</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <address>
-                        <strong>Velocity Vault</strong><br>
+                    <h5>Get In Touch</h5>
+                    <address style="font-style: normal;">
+                        <strong>VelocityVault</strong><br>
                         Hudson, Florida<br>
                         <br>
                         <i class="fas fa-phone"></i> <a href="tel:5803241069" class="text-white">(580) 324-1069</a><br>
@@ -211,15 +389,15 @@
                     </address>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2026 VelocityVault. All rights reserved. | SE Bikes Authorized Retailer</p>
+            <hr style="border-color: #555;">
+            <div class="text-center">
+                <p>&copy; 2026 VelocityVault. All rights reserved. | Proud SE Bikes Partner</p>
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/cart.js"></script>
-    <script src="js/affiliate-config.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
